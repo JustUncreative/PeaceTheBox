@@ -6,11 +6,13 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     private float horizontal;
+    private bool isJumping;
     [SerializeField] private float checkRadius = 0.2f;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float speed;
+    [SerializeField] private float jumpPower;
     
     void Start()
     {
@@ -24,6 +26,12 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate() {
         rb.velocity = new Vector2(horizontal * speed * Time.fixedDeltaTime * 50f, rb.velocity.y);
+
+        if(isJumping){
+            rb.AddForce(new Vector2(0f, jumpPower));
+
+            isJumping = false;
+        }
     }
     public void Move(InputAction.CallbackContext context){
         horizontal = context.ReadValue<Vector2>().x;
@@ -31,5 +39,11 @@ public class Movement : MonoBehaviour
 
     private bool isGrounded(){
         return Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+    }
+
+    public void Jump(InputAction.CallbackContext context){
+        if(context.performed && isGrounded()){
+            isJumping = true;
+        } 
     }
 }

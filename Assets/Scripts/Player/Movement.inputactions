@@ -168,6 +168,28 @@
                 },
                 {
                     "name": "",
+                    "id": "f6afe13a-9978-491d-b11a-6387de8557b4",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "90bf287a-2466-4995-afbf-ef0fb69d7065",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a0611131-6e28-4da6-8cb3-104829e704b0",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    private float currentHealth;
+    public float currentHealth;
     public static PlayerHealthController instance;
-    [SerializeField] private float maxHealth;
+    [SerializeField] public float maxHealth;
     private void Awake() {
         instance = this;
     }

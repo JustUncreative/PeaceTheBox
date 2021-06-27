@@ -25,12 +25,16 @@ public class PickUp : MonoBehaviour
     {
         if(other.CompareTag("Player") && !isCollected)
         {
-            //PlayerHealthController.instance.AddPointToPlayer(pointsToAdd);
+            if (PlayerHealthController.instance.currentHealth != PlayerHealthController.instance.maxHealth)
+            {
+                PlayerHealthController.instance.AddHealthPoints(pointsToAdd);
+                isCollected = true;
+                Destroy(gameObject);
 
-            isCollected = true;
-            Destroy(gameObject);
+                Instantiate(pickupEffect, transform.position, transform.rotation);
+            }
 
-            Instantiate(pickupEffect, transform.position, transform.rotation);
+
         }
 
     }

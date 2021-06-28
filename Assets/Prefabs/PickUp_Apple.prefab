@@ -133,6 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9d76bc62d937d41b79d5142668298a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsToAdd: 2
+  pointsToAdd: 10
   pickupEffect: {fileID: 3496462589843622667, guid: b3988c29694181f438530124df0ea3e4,
     type: 3}

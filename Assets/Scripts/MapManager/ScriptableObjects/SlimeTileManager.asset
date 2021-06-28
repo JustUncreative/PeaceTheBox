@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0899a9b519db744b91357eb9e43a81, type: 3}
-  m_Name: SllimeTileManager
+  m_Script: {fileID: 11500000, guid: 1e5cb7eb6d3c8f6438194017f09ba1d2, type: 3}
+  m_Name: SlimeTileManager
   m_EditorClassIdentifier: 
   tiles:
   - {fileID: 11400000, guid: 4156117bef4c79b4f83cc5c1dec212af, type: 2}
   - {fileID: 11400000, guid: 5ab29c49a84661746a02d6b919bf6b36, type: 2}
   - {fileID: 11400000, guid: 9f47f0a99a40a504387a5edd06e63081, type: 2}
   canSmear: 0
+  canDamage: 0

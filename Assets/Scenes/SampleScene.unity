@@ -1119,6 +1119,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2098713138}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1103037122 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8314642700470888052, guid: 0875f957d7746604d9c4f4b012c7c115,
+    type: 3}
+  m_PrefabInstance: {fileID: 3262109128059572922}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b9ee976da33474b8b17aad6a40e85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1127954629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17856,6 +17868,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262109127972565980, guid: 0875f957d7746604d9c4f4b012c7c115,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262109127972565980, guid: 0875f957d7746604d9c4f4b012c7c115,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
+      value: 2ace3364-37e4-4702-a9ee-d2add530c5f7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262109127972565980, guid: 0875f957d7746604d9c4f4b012c7c115,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
+      value: Player/MassControl[/DualShock4GamepadHID/buttonWest,/DualShock4GamepadHID/buttonWest,/Keyboard/f]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262109127972565980, guid: 0875f957d7746604d9c4f4b012c7c115,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262109127972565980, guid: 0875f957d7746604d9c4f4b012c7c115,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262109127972565980, guid: 0875f957d7746604d9c4f4b012c7c115,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1103037122}
+    - target: {fileID: 3262109127972565980, guid: 0875f957d7746604d9c4f4b012c7c115,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262109127972565980, guid: 0875f957d7746604d9c4f4b012c7c115,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: increaseHealthValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262109127972565980, guid: 0875f957d7746604d9c4f4b012c7c115,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerHealthController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262109127972565980, guid: 0875f957d7746604d9c4f4b012c7c115,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3262109127972565982, guid: 0875f957d7746604d9c4f4b012c7c115,
         type: 3}

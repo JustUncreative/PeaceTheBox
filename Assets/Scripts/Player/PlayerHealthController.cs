@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerHealthController : MonoBehaviour
 {
+    private bool isIncreaseHealth;
     private int[] Phase = {1, 2, 3, 4, 5, 6};
     public float currentHealth;
     private float _changePhaseTime;
+    private float _increaseHealthTime;
     public static PlayerHealthController instance;
     [SerializeField] public float maxHealth;
+    [SerializeField] private float increaseHealth;
     [SerializeField] private int currentPhase;
     [SerializeField] private bool isChangePhase;
     [SerializeField] private float changePhaseTime = 1f;
+    [SerializeField] private float increaseHealthTime = 1f;
     [SerializeField] private float[] phaseSpeed = {30, 20, 15, 10, 5, 1};
     [SerializeField] private float[] phaseJumpPower = {4000, 3000, 2000, 1500, 1000, 500};
     [SerializeField] private float[] phaseScale = {0.2f, 0.4f, 0.6f, 1f, 2f, 3f};
@@ -21,6 +26,10 @@ public class PlayerHealthController : MonoBehaviour
     void Start()
     {
         _changePhaseTime = changePhaseTime;
+        _increaseHealthTime = increaseHealthTime;
+
+        DetectPhase();
+        ChangePhase();
     }
 
     void Update()
@@ -39,6 +48,16 @@ public class PlayerHealthController : MonoBehaviour
                 ChangePhase();
             }
 
+        }
+
+        if(isIncreaseHealth){
+            _increaseHealthTime -= Time.deltaTime;
+
+            if(_increaseHealthTime < 0){
+                _increaseHealthTime = increaseHealthTime;
+
+                ReduceHealthPoints(increaseHealth);
+            }
         }
     }
 
@@ -102,5 +121,12 @@ public class PlayerHealthController : MonoBehaviour
         Movement.instance.changeJumpPower(phaseJumpPower[currentPhase - 1]);
 
         Movement.instance.transform.localScale = new Vector3(phaseScale[currentPhase - 1], phaseScale[currentPhase - 1], phaseScale[currentPhase - 1]);
+    }
+    public void increaseHealthValue(InputAction.CallbackContext context){
+        isIncreaseHealth = true;
+        if(context.canceled){
+            isIncreaseHealth = false;
+            _increaseHealthTime = increaseHealthTime;
+        }
     }
 }

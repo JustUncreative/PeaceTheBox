@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
+    public static Movement instance;
     private float horizontal;
     private bool isJumping;
     [SerializeField] private float checkRadius = 0.2f;
@@ -13,7 +14,9 @@ public class Movement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
-    
+    private void Awake() {
+        instance = this;
+    }
     void Start()
     {
         
@@ -45,5 +48,11 @@ public class Movement : MonoBehaviour
         if(context.performed && isGrounded()){
             isJumping = true;
         } 
+    }
+    public void changeSpeed(float value){
+        speed = value;
+    }
+    public void changeJumpPower(float value){
+        jumpPower = value;
     }
 }

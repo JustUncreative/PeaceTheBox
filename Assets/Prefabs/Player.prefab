@@ -290,4 +290,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b9ee976da33474b8b17aad6a40e85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 1
   maxHealth: 100
+  currentPhase: 1
+  isChangePhase: 0
+  changePhaseTime: 1
+  phaseSpeed:
+  - 30
+  - 20
+  - 15
+  - 10
+  - 5
+  - 1
+  phaseJumpPower:
+  - 4000
+  - 3000
+  - 2000
+  - 1500
+  - 1000
+  - 500
+  phaseScale:
+  - 0.2
+  - 0.4
+  - 0.6
+  - 1
+  - 2
+  - 3

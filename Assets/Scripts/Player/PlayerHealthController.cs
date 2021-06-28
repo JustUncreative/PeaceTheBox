@@ -54,9 +54,12 @@ public class PlayerHealthController : MonoBehaviour
             _increaseHealthTime -= Time.deltaTime;
 
             if(_increaseHealthTime < 0){
+
                 _increaseHealthTime = increaseHealthTime;
 
                 ReduceHealthPoints(increaseHealth);
+
+                isChangePhase = true;
             }
         }
     }

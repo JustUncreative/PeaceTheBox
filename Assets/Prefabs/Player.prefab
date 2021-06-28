@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b9ee976da33474b8b17aad6a40e85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 20
+  currentHealth: 21
   maxHealth: 100
   increaseHealth: 10
   currentPhase: 1

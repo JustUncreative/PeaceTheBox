@@ -327,6 +327,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2ace3364-37e4-4702-a9ee-d2add530c5f7
     m_ActionName: Player/MassControl[/DualShock4GamepadHID/buttonWest,/DualShock4GamepadHID/buttonWest,/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5071bd5c-30ca-4681-ba01-6b2b8e972f2a
+    m_ActionName: Player/Test[/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -344,6 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0108622305741c47ac0a21a386165cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontal: 0
   checkRadius: 0.2
   rb: {fileID: 3262109127972565981}
   groundCheck: {fileID: 3262109127212143340}

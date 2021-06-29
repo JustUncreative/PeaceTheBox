@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     public static Movement instance;
-    private float horizontal;
+    public float horizontal;
     private bool isJumping;
     [SerializeField] private float checkRadius = 0.2f;
     [SerializeField] private Rigidbody2D rb;

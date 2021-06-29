@@ -16,5 +16,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3282545b842c5c7428eeaa02f37dcc98, type: 2}
   - {fileID: 11400000, guid: 0d804f3ad39ec3c4c812cc42dc1a4a4d, type: 2}
   - {fileID: 11400000, guid: ae987ac57d251ba468405378d66ff9e3, type: 2}
+  - {fileID: 11400000, guid: a7debdbfb5b0a0e49a8ceb2a80ca5c71, type: 2}
+  - {fileID: 11400000, guid: 741d4c1c04786c7448bd3528a1d44cf4, type: 2}
+  - {fileID: 11400000, guid: ad3faabd0a4da8e4c9d807f5e6f3ce87, type: 2}
+  - {fileID: 11400000, guid: 858dbaf1020566141a9820d74c4c2790, type: 2}
+  - {fileID: 11400000, guid: 3d7fa385e9706c44080e6d4bf7b4a693, type: 2}
+  - {fileID: 11400000, guid: 914c7e31a323df94f90c4f437688c3bd, type: 2}
+  - {fileID: 11400000, guid: 73e3c1b4b9e4dd24f8f624beddb0ef02, type: 2}
+  - {fileID: 11400000, guid: b0d3a92d3dbe998438f7362c9c1c0358, type: 2}
+  - {fileID: 11400000, guid: 73859c099c205c2478701df88e43b5b3, type: 2}
+  - {fileID: 11400000, guid: f5765ec1d4c6ec749b9913acd7a7c10a, type: 2}
   canSmear: 1
   canDamage: 1

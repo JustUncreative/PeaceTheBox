@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerHealthController : MonoBehaviour
 {
+    private bool _isDie;
+    private Rigidbody2D rb => Movement.instance.rb;
     public bool _isAlive => IsAlive(currentHealth);
     private bool isIncreaseHealth;
     private int[] Phase = {1, 2, 3, 4, 5, 6};
@@ -21,6 +23,7 @@ public class PlayerHealthController : MonoBehaviour
     [SerializeField] private float[] phaseSpeed = {30, 20, 15, 10, 5, 1};
     [SerializeField] private float[] phaseJumpPower = {4000, 3000, 2000, 1500, 1000, 500};
     [SerializeField] private float[] phaseScale = {0.2f, 0.4f, 0.6f, 1f, 2f, 3f};
+    [SerializeField] private Vector2 _deathKick = new Vector2(0f, 2f);
     private void Awake() {
         instance = this;
     }
@@ -63,6 +66,13 @@ public class PlayerHealthController : MonoBehaviour
 
                 DetectPhase();
             }
+        }
+    }
+    private void FixedUpdate() {
+        if(!_isAlive && !_isDie){
+            _isDie = true;
+
+            Die();
         }
     }
 
@@ -136,5 +146,8 @@ public class PlayerHealthController : MonoBehaviour
             isIncreaseHealth = false;
             _increaseHealthTime = increaseHealthTime;
         }
+    }
+    public void Die(){
+        rb.velocity = _deathKick;
     }
 }

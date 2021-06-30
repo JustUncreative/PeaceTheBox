@@ -9,4 +9,6 @@ public class TileData : ScriptableObject {
     public TileBase[] tiles;
 
     public bool canSmear, canDamage;
+
+    public float damage;
 }

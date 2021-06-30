@@ -28,3 +28,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6b823440611b6e04abc8fb7f9986ee3d, type: 2}
   canSmear: 0
   canDamage: 0
+  damage: 0

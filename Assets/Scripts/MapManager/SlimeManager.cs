@@ -5,9 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class SlimeManager : MonoBehaviour
 {
+    [SerializeField] private SmearDamage _smearDamage;
     [SerializeField] private Tilemap map;
     [SerializeField] private TileBase slimeTile;
-
     [SerializeField] MapManager mapManager;
 
     private void Update() {
@@ -18,12 +18,14 @@ public class SlimeManager : MonoBehaviour
         TileData data = mapManager.GetTileData(gridPosition);
 
         SmearTile(gridPosition, data);
+
+        _smearDamage.ApplyDamage(data);
     }
 
-    void SmearTile(Vector3Int tilePosition, TileData data){
+    private void SmearTile(Vector3Int tilePosition, TileData data){
         if(data != null && data.canSmear){
             map.SetTile(tilePosition, slimeTile);
-
+            _smearDamage.ApplySmearDamage(data);
             //print("Tile set in" + tilePosition);
         }
     }

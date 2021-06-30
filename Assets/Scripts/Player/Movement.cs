@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     public float horizontal;
     private bool isJumping;
     [SerializeField] private float checkRadius = 0.2f;
-    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] public Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float speed;

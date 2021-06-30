@@ -7,7 +7,7 @@ public class SlimeManager : MonoBehaviour
 {
     [SerializeField] private SmearDamage _smearDamage;
     [SerializeField] private Tilemap map;
-    [SerializeField] private TileBase slimeTile;
+    [SerializeField] private TileBase[] slimeTile;
     [SerializeField] MapManager mapManager;
 
     private void Update() {
@@ -24,7 +24,7 @@ public class SlimeManager : MonoBehaviour
 
     private void SmearTile(Vector3Int tilePosition, TileData data){
         if(data != null && data.canSmear){
-            map.SetTile(tilePosition, slimeTile);
+            map.SetTile(tilePosition, slimeTile[data.replacementNumber]);
             _smearDamage.ApplySmearDamage(data);
             //print("Tile set in" + tilePosition);
         }

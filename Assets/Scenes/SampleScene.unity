@@ -311,10 +311,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   map: {fileID: 497276450}
   tileDatas:
-  - {fileID: 11400000, guid: d93dac6d584d20a4fb0786ef43e7d354, type: 2}
   - {fileID: 11400000, guid: f25f042751589b94cb58c2754666cc63, type: 2}
   - {fileID: 11400000, guid: 3e6e30f898a3c144095900b46c3bfcbd, type: 2}
   - {fileID: 11400000, guid: 75ca2eafd24749343bb5746dfd6b366a, type: 2}
+  - {fileID: 11400000, guid: cc721b2edce5edc48b586a1ffe8cdb91, type: 2}
+  - {fileID: 11400000, guid: d93dac6d584d20a4fb0786ef43e7d354, type: 2}
+  - {fileID: 11400000, guid: 1ee51315b0c96e34c9b515f47586d22c, type: 2}
 --- !u!4 &141635397
 Transform:
   m_ObjectHideFlags: 0
@@ -503,7 +505,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _smearDamage: {fileID: 544465829}
   map: {fileID: 497276450}
-  slimeTile: {fileID: 11400000, guid: 0fe5335875c20594a80611162a4d1e2d, type: 2}
+  slimeTile:
+  - {fileID: 11400000, guid: 2878e682f8813e3409ffd33dd8e570a9, type: 2}
+  - {fileID: 11400000, guid: 0fe5335875c20594a80611162a4d1e2d, type: 2}
+  - {fileID: 11400000, guid: 404ac992101de28489abd0fde2caef36, type: 2}
   mapManager: {fileID: 141635396}
 --- !u!4 &193814859
 Transform:

@@ -11,4 +11,7 @@ public class TileData : ScriptableObject {
     public bool canSmear, canDamage;
 
     public float damage;
+
+    public int replacementNumber;
+    
 }

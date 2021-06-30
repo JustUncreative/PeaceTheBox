@@ -10,10 +10,6 @@ public class SmearDamage : MonoBehaviour
     private void Start() {
         _damageTimer = _damageTime;
     }
-    private void Update() {
-        
-        print(_damageTimer);  
-    }
     public void ApplySmearDamage(TileData data){
         if(data != null && data.canSmear && data.canDamage){
             PlayerHealthController.instance.ReduceHealthPoints(data.damage);

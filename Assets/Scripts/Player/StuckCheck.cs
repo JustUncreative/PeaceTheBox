@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class StuckCheck : MonoBehaviour
 {
+    public static StuckCheck instance;
     private float stuckTimer;
     public bool _isStuck;
     [SerializeField] private float checkRadius;
     [SerializeField] private Transform stuckCheck;
     [SerializeField] private LayerMask Layer;
-    [SerializeField] private float _stuckTime = 1.5f;
+    [SerializeField] private float _stuckTime = 0f;
+
+    private void Awake() {
+        instance = this;
+    }
     private void Start() {
         stuckTimer = _stuckTime;
     }
@@ -17,14 +22,26 @@ public class StuckCheck : MonoBehaviour
     {
         checkRadius = 0.9f * Movement.instance.transform.localScale.x/2;
 
-        if(IsStuck() && PlayerHealthController.instance._isAlive){
+        if(IsStuck() && !_isStuck){
             stuckTimer -= Time.deltaTime;
 
-            if(stuckTimer < 0){
-                PlayerHealthController.instance.currentHealth = 0f;
-                print("You are alive - " + PlayerHealthController.instance._isAlive);
+            if(stuckTimer <= 0){
+                _isStuck = true;
                 stuckTimer = _stuckTime;
             }
+        }
+    }
+    private void FixedUpdate() {
+        if(IsStuck() && _isStuck){
+            PlayerHealthController.instance.currentHealth -= 0.25f;
+            
+            PlayerHealthController.instance.DetectPhase();
+            PlayerHealthController.instance.ChangePhase();
+        }
+
+        if(!IsStuck() && _isStuck){
+            _isStuck = false;
+            PlayerHealthController.instance.currentHealth = Mathf.Floor(PlayerHealthController.instance.currentHealth);
         }
     }
 

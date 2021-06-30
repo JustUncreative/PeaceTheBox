@@ -445,4 +445,4 @@ MonoBehaviour:
   Layer:
     serializedVersion: 2
     m_Bits: 64
-  _stuckTime: 0.5
+  _stuckTime: 0

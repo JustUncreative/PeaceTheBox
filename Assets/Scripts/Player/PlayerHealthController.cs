@@ -35,7 +35,7 @@ public class PlayerHealthController : MonoBehaviour
 
     void Update()
     {
-        if(isChangePhase){
+        if(isChangePhase && !StuckCheck.instance._isStuck){
             _changePhaseTime -= Time.deltaTime;
 
             //animation
@@ -43,7 +43,6 @@ public class PlayerHealthController : MonoBehaviour
             if(_changePhaseTime < 0){
                 DetectPhase();
 
-                isChangePhase = false;
                 _changePhaseTime = changePhaseTime;
 
                 transform.position = new Vector3(transform.position.x, transform.position.y + phaseScale[currentPhase - 1]/2, transform.position.z);
@@ -128,6 +127,8 @@ public class PlayerHealthController : MonoBehaviour
         Movement.instance.changeJumpPower(phaseJumpPower[currentPhase - 1]);
 
         transform.localScale = new Vector3(phaseScale[currentPhase - 1], phaseScale[currentPhase - 1], phaseScale[currentPhase - 1]);
+
+        isChangePhase = false;
     }
     public void increaseHealthValue(InputAction.CallbackContext context){
         isIncreaseHealth = true;

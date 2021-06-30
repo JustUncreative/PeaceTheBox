@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if(PlayerHealthController.instance._isAlive){
+        if(PlayerHealthController.instance._isAlive && !StuckCheck.instance._isStuck){
             rb.velocity = new Vector2(horizontal * speed * Time.fixedDeltaTime * 50f, rb.velocity.y);
 
             if(isJumping){

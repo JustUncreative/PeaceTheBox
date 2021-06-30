@@ -28,12 +28,14 @@ public class Movement : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        rb.velocity = new Vector2(horizontal * speed * Time.fixedDeltaTime * 50f, rb.velocity.y);
+        if(PlayerHealthController.instance._isAlive){
+            rb.velocity = new Vector2(horizontal * speed * Time.fixedDeltaTime * 50f, rb.velocity.y);
 
-        if(isJumping){
-            rb.AddForce(new Vector2(0f, jumpPower));
+            if(isJumping){
+                rb.AddForce(new Vector2(0f, jumpPower));
 
-            isJumping = false;
+                isJumping = false;
+            }
         }
     }
     public void Move(InputAction.CallbackContext context){

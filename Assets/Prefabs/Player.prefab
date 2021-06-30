@@ -405,6 +405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3476933638903387028}
+  - component: {fileID: 973008418}
   m_Layer: 0
   m_Name: stuckCheck
   m_TagString: Untagged
@@ -426,3 +427,22 @@ Transform:
   m_Father: {fileID: 3262109127972565968}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &973008418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5863714869207618339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b547b501783314ca98e9ba265049e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isStuck: 0
+  checkRadius: 0.19
+  stuckCheck: {fileID: 3476933638903387028}
+  Layer:
+    serializedVersion: 2
+    m_Bits: 64
+  _stuckTime: 0.5

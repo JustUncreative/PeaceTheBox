@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerHealthController : MonoBehaviour
 {
+    public bool _isAlive => IsAlive(currentHealth);
     private bool isIncreaseHealth;
     private int[] Phase = {1, 2, 3, 4, 5, 6};
     public float currentHealth;
@@ -29,7 +30,7 @@ public class PlayerHealthController : MonoBehaviour
         _increaseHealthTime = increaseHealthTime;
 
         DetectPhase();
-        ChangePhase();
+        //ChangePhase();
     }
 
     void Update()
@@ -45,6 +46,8 @@ public class PlayerHealthController : MonoBehaviour
                 isChangePhase = false;
                 _changePhaseTime = changePhaseTime;
 
+                transform.position = new Vector3(transform.position.x, transform.position.y + phaseScale[currentPhase - 1]/2, transform.position.z);
+                 
                 ChangePhase();
             }
 
@@ -59,36 +62,36 @@ public class PlayerHealthController : MonoBehaviour
 
                 ReduceHealthPoints(increaseHealth);
 
-                isChangePhase = true;
+                DetectPhase();
             }
         }
     }
 
     public void ReduceHealthPoints(float Points){
-        if(isAlive()){
+        if(IsAlive(currentHealth)){
             currentHealth -= Points;
         }
 
             DetectPhase();
     }
     public void AddHealthPoints(float Points){
-        if(isAlive() && currentHealth < maxHealth){
+        if(IsAlive(currentHealth) && currentHealth < maxHealth){
             currentHealth += Points;
         }
 
-        editCurrentHealth();
+        EditCurrentHealth();
 
         DetectPhase();
     }
-    public bool isAlive(){
-        if(currentHealth > 0){
+    public bool IsAlive(float health){
+        if(health > 0){
             return true;
         }
         else{
             return false;
         }
     }
-    public void editCurrentHealth(){
+    public void EditCurrentHealth(){
         if(currentHealth > maxHealth){
             currentHealth = maxHealth;
         }
@@ -96,6 +99,7 @@ public class PlayerHealthController : MonoBehaviour
     public void DetectPhase(){
         if(currentHealth == 1f && currentPhase != Phase[0]){
             currentPhase = Phase[0];
+            isChangePhase = true;
         }
         else if(currentHealth > 1 && currentHealth < 25 && currentPhase != Phase[1]){
             currentPhase = Phase[1];
@@ -123,7 +127,7 @@ public class PlayerHealthController : MonoBehaviour
 
         Movement.instance.changeJumpPower(phaseJumpPower[currentPhase - 1]);
 
-        Movement.instance.transform.localScale = new Vector3(phaseScale[currentPhase - 1], phaseScale[currentPhase - 1], phaseScale[currentPhase - 1]);
+        transform.localScale = new Vector3(phaseScale[currentPhase - 1], phaseScale[currentPhase - 1], phaseScale[currentPhase - 1]);
     }
     public void increaseHealthValue(InputAction.CallbackContext context){
         isIncreaseHealth = true;

@@ -1307,35 +1307,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &973008416 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5863714869207618339, guid: 0875f957d7746604d9c4f4b012c7c115,
-    type: 3}
-  m_PrefabInstance: {fileID: 3262109128059572922}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &973008417 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3476933638903387028, guid: 0875f957d7746604d9c4f4b012c7c115,
-    type: 3}
-  m_PrefabInstance: {fileID: 3262109128059572922}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &973008418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973008416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b547b501783314ca98e9ba265049e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkRadius: 0.19
-  stuckCheck: {fileID: 973008417}
-  Layer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!4 &1010185737 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9208682943351266474, guid: e4171681dc9195c48b2c14413a588d86,

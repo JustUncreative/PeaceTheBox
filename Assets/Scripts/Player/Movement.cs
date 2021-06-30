@@ -42,12 +42,12 @@ public class Movement : MonoBehaviour
         horizontal = context.ReadValue<Vector2>().x;
     }
 
-    private bool isGrounded(){
+    public bool IsGrounded(){
         return Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
     }
 
     public void Jump(InputAction.CallbackContext context){
-        if(context.performed && isGrounded()){
+        if(context.performed && IsGrounded()){
             isJumping = true;
         } 
     }

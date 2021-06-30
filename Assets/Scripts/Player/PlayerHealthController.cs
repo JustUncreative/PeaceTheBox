@@ -17,7 +17,7 @@ public class PlayerHealthController : MonoBehaviour
     [SerializeField] public float maxHealth;
     [SerializeField] private float increaseHealth;
     [SerializeField] private int currentPhase;
-    [SerializeField] private bool isChangePhase;
+    [SerializeField] public bool isChangePhase;
     [SerializeField] private float changePhaseTime = 1f;
     [SerializeField] private float increaseHealthTime = 1f;
     [SerializeField] private float[] phaseSpeed = {30, 20, 15, 10, 5, 1};

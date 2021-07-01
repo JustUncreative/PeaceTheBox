@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b9ee976da33474b8b17aad6a40e85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 55
+  currentHealth: 21
   maxHealth: 100
   increaseHealth: 10
   currentPhase: 4
@@ -397,6 +397,15 @@ MonoBehaviour:
   - 1
   - 2
   - 3
+  _phaseBorder:
+  - 1
+  - 1
+  - 25
+  - 50
+  - 75
+  - 100
+  - 100
+  Phase: 010000000200000003000000040000000500000006000000
   _deathKick: {x: 0, y: 20}
 --- !u!114 &544465829
 MonoBehaviour:
@@ -410,7 +419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115a28e842eb58f47a19e5b0cb16b4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startProcess: 0
   _damageTime: 3
 --- !u!1 &5863714869207618339
 GameObject:

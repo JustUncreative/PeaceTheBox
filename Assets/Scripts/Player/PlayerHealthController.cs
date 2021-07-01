@@ -9,7 +9,6 @@ public class PlayerHealthController : MonoBehaviour
     private Rigidbody2D rb => Movement.instance.rb;
     public bool _isAlive => IsAlive(currentHealth);
     private bool isIncreaseHealth;
-    private int[] Phase = {1, 2, 3, 4, 5, 6};
     public float currentHealth;
     private float _changePhaseTime;
     private float _increaseHealthTime;
@@ -23,6 +22,8 @@ public class PlayerHealthController : MonoBehaviour
     [SerializeField] private float[] phaseSpeed = {30, 20, 15, 10, 5, 1};
     [SerializeField] private float[] phaseJumpPower = {4000, 3000, 2000, 1500, 1000, 500};
     [SerializeField] private float[] phaseScale = {0.2f, 0.4f, 0.6f, 1f, 2f, 3f};
+    [SerializeField] public float[] _phaseBorder;
+    [SerializeField] private int[] Phase;
     [SerializeField] private Vector2 _deathKick = new Vector2(0f, 2f);
     private void Awake() {
         instance = this;
@@ -33,6 +34,7 @@ public class PlayerHealthController : MonoBehaviour
         _increaseHealthTime = increaseHealthTime;
 
         DetectPhase();
+        
         //ChangePhase();
     }
 
@@ -45,7 +47,7 @@ public class PlayerHealthController : MonoBehaviour
 
             if(_changePhaseTime < 0){
                 DetectPhase();
-
+                
                 _changePhaseTime = changePhaseTime;
 
                 transform.position = new Vector3(transform.position.x, transform.position.y + phaseScale[currentPhase - 1]/2, transform.position.z);
@@ -65,6 +67,7 @@ public class PlayerHealthController : MonoBehaviour
                 ReduceHealthPoints(increaseHealth);
 
                 DetectPhase();
+                
             }
         }
     }
@@ -81,7 +84,8 @@ public class PlayerHealthController : MonoBehaviour
             currentHealth -= Points;
         }
 
-            DetectPhase();
+        DetectPhase();
+            
     }
     public void AddHealthPoints(float Points){
         if(IsAlive(currentHealth) && currentHealth < maxHealth){
@@ -91,6 +95,7 @@ public class PlayerHealthController : MonoBehaviour
         EditCurrentHealth();
 
         DetectPhase();
+        
     }
     public bool IsAlive(float health){
         if(health > 0){
@@ -106,29 +111,16 @@ public class PlayerHealthController : MonoBehaviour
         }
     }
     public void DetectPhase(){
-        if(currentHealth == 1f && currentPhase != Phase[0]){
-            currentPhase = Phase[0];
-            isChangePhase = true;
-        }
-        else if(currentHealth > 1 && currentHealth < 25 && currentPhase != Phase[1]){
-            currentPhase = Phase[1];
-            isChangePhase = true;
-        }
-        else if(currentHealth >= 25 && currentHealth < 50 && currentPhase != Phase[2]){
-            currentPhase = Phase[2];
-            isChangePhase = true;
-        }
-        else if(currentHealth >= 50 && currentHealth < 75 && currentPhase != Phase[3]){
-            currentPhase = Phase[3];
-            isChangePhase = true;
-        }
-        else if(currentHealth >= 75 && currentHealth < 100 && currentPhase != Phase[4]){
-            currentPhase = Phase[4];
-            isChangePhase = true;
-        }
-        else if(currentHealth == 100 && currentPhase != Phase[5]){
-            currentPhase = Phase[5];
-            isChangePhase = true;
+        for(int i = 0; i < Phase.Length; i++){
+            if(_phaseBorder[i] == _phaseBorder[i + 1]){
+                if(currentHealth == _phaseBorder[i] && currentPhase != Phase[i]){
+                currentPhase = Phase[i];
+                isChangePhase = true;
+                }
+            }else if(currentHealth > _phaseBorder[i] && currentHealth <= _phaseBorder[i + 1] && currentPhase != Phase[i]){
+                currentPhase = Phase[i];
+                isChangePhase = true;
+            }
         }
     }
     public void ChangePhase(){

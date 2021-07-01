@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerHealthController : MonoBehaviour
 {
+    [SerializeField] PlayerParticles playerParticles;
     private bool _isDie;
     private Rigidbody2D rb => Movement.instance.rb;
     public bool _isAlive => IsAlive(currentHealth);
@@ -65,6 +66,8 @@ public class PlayerHealthController : MonoBehaviour
                 _increaseHealthTime = increaseHealthTime;
 
                 ReduceHealthPoints(increaseHealth);
+
+                playerParticles.SpawnPartiles(playerParticles.SlimeParticle, transform);
 
                 DetectPhase();
                 

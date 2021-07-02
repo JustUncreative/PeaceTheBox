@@ -22,3 +22,4 @@ MonoBehaviour:
   canSmear: 0
   canDamage: 1
   damage: 10
+  replacementNumber: -1
